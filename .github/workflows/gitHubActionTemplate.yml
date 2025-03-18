@@ -75,25 +75,25 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
-#      - name: 'BrowserStack Env Setup'
-#        uses: 'browserstack/github-actions/setup-env@master'
-#        with:
-#          username: ${{ secrets.BROWSERSTACK_USERNAME }}
-#          access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
-#
-#      - name: "BrowserStack Local Tunnel Setup"
-#        uses: browserstack/github-actions/setup-local@master
-#        with:
-#          local-testing: "start"
-#          local-logging-level: "all-logs"
-#          local-identifier: "random"
+      - name: 'BrowserStack Env Setup'
+        uses: 'browserstack/github-actions/setup-env@master'
+        with:
+          username: ${{ secrets.BROWSERSTACK_USERNAME }}
+          access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
 
-#      - name: Set Workflow Build Name on BrowserStack
-#        run: echo "BROWSERSTACK_BUILD_NAME=OnePlatform_JAVA-${{ inputs.customBuildName }}-$(date '+%Y-%m-%d %H:%M:%S')" >> $GITHUB_ENV
+      - name: "BrowserStack Local Tunnel Setup"
+        uses: browserstack/github-actions/setup-local@master
+        with:
+          local-testing: "start"
+          local-logging-level: "all-logs"
+          local-identifier: "random"
+
+      - name: Set Workflow Build Name on BrowserStack
+        run: echo "BROWSERSTACK_BUILD_NAME=OnePlatform_JAVA-${{ inputs.customBuildName }}-$(date '+%Y-%m-%d %H:%M:%S')" >> $GITHUB_ENV
 
       # Update suiteXmlFile, appUnderTest, ConfigFile, Tags etc as per your requirements
       - name: Build with Maven
-        run: mvn test -DsuiteXmlFile="src/test/java/web/resources/testrunner/Single_Browser_Parallel.xml" -DappUnderTest="demo.web.url" -Dcucumber.filter.tags="@Demo" -q -B
+        run: mvn test -DsuiteXmlFile="src/test/java/web/resources/testrunner/Single_Browser_Parallel.xml" -DappUnderTest="demo.web.url" -Dbrowserstack.config="browserstack_web_chrome.yml" -Dcucumber.filter.tags="@Demo" -q -B
 #        env:
 #          AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
 #          AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
