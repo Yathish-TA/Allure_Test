@@ -146,7 +146,8 @@ public class BaseClass {
         tscProdPage = new TSCProdPage(getDriver());
 
         // Loading url here from prop file or on run time
-        getDriver().get(System.getProperty("URL", prop.getProperty(appUnderTest)));
+//        getDriver().get(System.getProperty("URL", prop.getProperty(appUnderTest)));
+        getDriver().get("https://www.saucedemo.com/v1/index.html");
     }
 
     public void closeBrowser() {
