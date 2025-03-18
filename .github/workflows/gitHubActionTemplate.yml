@@ -11,7 +11,7 @@ on:
   # Trigger the workflow on push events
   push:
     branches:
-#      - main  # Trigger the workflow when changes are pushed to the 'main' branch
+      - main  # Trigger the workflow when changes are pushed to the 'main' branch
       - develop  # You can add any other branches you need to trigger on here
 
   # Trigger the workflow on pull request events
@@ -93,22 +93,22 @@ jobs:
 
       # Update suiteXmlFile, appUnderTest, ConfigFile, Tags etc as per your requirements
       - name: Build with Maven
-        run: mvn test -DsuiteXmlFile="src/test/java/web/resources/testrunner/Single_Browser_Parallel.xml" -DappUnderTest="demo.web.url" -Dbrowserstack.config="browserstack_web_chrome.yml" -Dcucumber.filter.tags="@Demo" -q -B
+        run: mvn test -DsuiteXmlFile="src/test/java/web/resources/testrunner/Single_Browser_Parallel.xml" -DappUnderTest="demo.web.url" -Dcucumber.filter.tags="@Demo" -q -B
 #        env:
 #          AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
 #          AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
 #          AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
 #          AZURE_KEY_VAULT_NAME: ${{ secrets.AZURE_KEY_VAULT_NAME }}
 
-      - name: Upload Test Report
-        uses: actions/upload-artifact@v4
-        with:
-            name: Allure-test-report
-            path: |
-              allure-report/index.html
-            if-no-files-found: warn
-            overwrite: true
-        if: always()
+#      - name: Upload Test Report
+#        uses: actions/upload-artifact@v4
+#        with:
+#            name: Allure-test-report
+#            path: |
+#              allure-report/index.html
+#            if-no-files-found: warn
+#            overwrite: true
+#        if: always()
 
 
       - name: Load test report history
