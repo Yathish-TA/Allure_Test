@@ -147,7 +147,8 @@ public class BaseClass {
 
         // Loading url here from prop file or on run time
 //        getDriver().get(System.getProperty("URL", prop.getProperty(appUnderTest)));
-        getDriver().get("https://www.saucedemo.com/v1/index.html");
+//        getDriver().get("https://www.saucedemo.com/v1/index.html");
+        getDriver().get("https://www.tractorsupply.com/");
     }
 
     public void closeBrowser() {
