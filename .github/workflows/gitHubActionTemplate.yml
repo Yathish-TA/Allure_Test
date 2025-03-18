@@ -34,31 +34,31 @@ on:
         description: 'Provide your custom build name for Manual Trigger'
         required: true
         default: 'Manual_Run'
-      QTest_Status_Update:
-        description: 'Do you want to update the status to QTest?'
-        required: true
-        default: 'No'
-        type: choice
-        options:
-          - 'Yes'
-          - 'No'
-      QTest_Project_Name:
-        description: 'Select the project name (only if Status_Update is Yes)'
-        required: false
-        default: "Sample Project"
-        type: choice
-        options:
-          - "Sample Project"
-          - "HRIS"
-          - "Integration"
-          - "Logistics"
-          - "Omnichannel"
-          - "POS"
-          - "SAP"
-      QTest_TestSuite_ID_and_Name:
-        description: 'Enter the TestSuite ID and Name (only if Status_Update is Yes)'
-        required: false
-        type: string
+#      QTest_Status_Update:
+#        description: 'Do you want to update the status to QTest?'
+#        required: true
+#        default: 'No'
+#        type: choice
+#        options:
+#          - 'Yes'
+#          - 'No'
+#      QTest_Project_Name:
+#        description: 'Select the project name (only if Status_Update is Yes)'
+#        required: false
+#        default: "Sample Project"
+#        type: choice
+#        options:
+#          - "Sample Project"
+#          - "HRIS"
+#          - "Integration"
+#          - "Logistics"
+#          - "Omnichannel"
+#          - "POS"
+#          - "SAP"
+#      QTest_TestSuite_ID_and_Name:
+#        description: 'Enter the TestSuite ID and Name (only if Status_Update is Yes)'
+#        required: false
+#        type: string
 
 jobs:
   build:
@@ -93,7 +93,7 @@ jobs:
 
       # Update suiteXmlFile, appUnderTest, ConfigFile, Tags etc as per your requirements
       - name: Build with Maven
-        run: mvn test -DsuiteXmlFile="src/test/java/web/resources/testrunner/Single_Browser_Parallel.xml" -DappUnderTest="demo.web.url" -Dbrowserstack.config="browserstack_web_chrome.yml" -Dcucumber.filter.tags="@Demo" -DupdateStatus=${{ github.event.inputs.QTest_Status_Update }} -DprojectName="${{ github.event.inputs.QTest_Project_Name }}" -DtestSuiteIdAndName="${{ github.event.inputs.QTest_TestSuite_ID_and_Name }}" -q -B
+        run: mvn test -DsuiteXmlFile="src/test/java/web/resources/testrunner/Single_Browser_Parallel.xml" -DappUnderTest="demo.web.url" -Dbrowserstack.config="browserstack_web_chrome.yml" -Dcucumber.filter.tags="@Demo" -q -B
 #        env:
 #          AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
 #          AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
