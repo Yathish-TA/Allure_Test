@@ -1,0 +1,14 @@
+{
+  "eventType": "SUPPLY_UPDATE",
+  "feedType": "ABSOLUTE",
+  "locationId": "263",
+  "locationType": "store",
+  "orgId": "TSC",
+  "productId": "1000731",
+  "quantity": "$quantity$",
+  "uom": "EACH",
+  "to": {
+    "segment": "DEFAULT",
+    "supplyType": "ONHAND"
+  }
+}

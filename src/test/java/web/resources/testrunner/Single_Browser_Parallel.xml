@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="OneFramework Suite" data-provider-thread-count="3" parallel="tests">
+    <listeners>
+        <listener class-name="listeners.RetryListener" />
+        <listener class-name="listeners.AllureTestNgListener" />
+    </listeners>
+    <test name="WebTestCase">
+        <parameter name="browserType" value="chrome" />
+        <parameter name="runMode" value="local" />
+        <parameter name="appUnderTest" value="demo.web.url" />
+        <!--        If executing on remote mode plz Enable below parameters   -->
+        <parameter name="os" value="Windows" />
+        <parameter name="osVersion" value="11" />
+        <parameter name="browserVersion" value="latest" />
+        <classes>
+            <class name="web.resources.testrunner.WebTestRun" />
+        </classes>
+    </test>
+    <!-- Test -->
+</suite>

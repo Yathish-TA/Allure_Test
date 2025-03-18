@@ -1,0 +1,30 @@
+framework: testng
+platforms:
+  - os: Windows
+    osVersion: 10
+    browserName: Chrome
+    browserVersion: 128.0
+    chromeOptions:
+      args:
+        - incognito
+        - --start-maximized
+        - --remote-allow-origins=*
+#  - browserName: Safari
+#    os: OS X
+#    osVersion: Monterey
+#    browserVersion: 15.6
+
+buildName: One_Platform_Test
+projectName: One_Platform_Framework
+
+testContextOptions:
+  skipSessionName: true
+
+parallelsPerPlatform: 1
+networklogs: true
+interactiveDebugging: true
+
+browserstackLocal: true
+browserStackLocalOptions:
+  - localIdentifier: browserstack_local_identifier
+  - forceLocal: true

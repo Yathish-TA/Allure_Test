@@ -1,0 +1,27 @@
+framework: testng
+platforms:
+  - platformName: android
+    deviceName: Samsung Galaxy S22 Ultra
+    browserName: chrome
+    platformVersion: 12.0
+  - platformName: android
+    deviceName: Google Pixel 7 Pro
+    browserName: chrome
+    platformVersion: 13.0
+  - platformName: android
+    browserName: chrome
+    deviceName: OnePlus 9
+    platformVersion: 11.0
+browserstackLocal: true
+browserStackLocalOptions:
+  forceLocal: true
+buildName: TSC_OnePlatform_Android_Parallel
+projectName: TSC_OnePlatform_Mobile
+testContextOptions:
+  skipSessionName: true
+debug: true
+networkLogs: true
+interactiveDebugging: true
+testObservability: true
+source: cucumber-testng:appium-intellij:v1.1.6
+idleTimeout: 300

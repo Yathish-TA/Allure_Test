@@ -1,0 +1,29 @@
+[
+  {
+    "email": "y.g@reqres.in",
+    "first_name": "Vinay",
+    "last_name": "Gowda",
+    "id": "$id$",
+    "quantity": 5,
+    "skus": [
+      {
+        "skuId": "$Address$",
+        "productId": "102478799",
+        "type": "DEFAULT"
+      },
+      {
+        "skuId": "$ItemId2$",
+        "productId": "102478799",
+        "type": "DEFAULT"
+      },
+      {
+        "skuId": "$ItemId3$",
+        "productId": "102478799",
+        "type": "DEFAULT"
+      }
+    ],
+    "deliveryDetails": {
+      "storeLocationIdentifier": "$storeLocationIdentifier$"
+    }
+  }
+]

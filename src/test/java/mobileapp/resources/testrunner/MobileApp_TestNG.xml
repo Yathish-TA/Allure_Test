@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="OneFramework Suite" parallel="methods">
+    <listeners>
+        <listener class-name="listeners.RetryListener"/>
+    </listeners>
+    <test name="OneFramework">
+        <classes>
+            <class name="mobileapp.resources.testrunner.RunMobileAppTest"/>
+        </classes>
+    </test>
+</suite>

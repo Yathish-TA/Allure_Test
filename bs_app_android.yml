@@ -1,0 +1,20 @@
+framework: testng
+app: bs://c16c4c3999e45f3e8e094390e9570b325b7a0a17
+autoGrantPermissions: true
+platforms:
+  - platformName: android
+    deviceName: Samsung Galaxy S24 Ultra
+    platformVersion: 14.0
+browserstackLocal: true
+browserStackLocalOptions:
+  forceLocal: true
+buildName: TSC_OnePlatform_Android
+projectName: TSC_OnePlatform_Mobile_App
+testContextOptions:
+  skipSessionName: true
+debug: false
+networkLogs: true
+interactiveDebugging: true
+testObservability: true
+source: cucumber-testng:appium-intellij:v1.1.6
+idleTimeout: 300

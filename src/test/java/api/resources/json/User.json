@@ -1,0 +1,9 @@
+{
+  "email": "y.g@reqres.in",
+  "first_name": "Yash",
+  "last_name": "Gowda",
+  "id": "$id$",
+  "deliveryDetails": {
+    "storeLocationIdentifier": "111"
+  }
+}

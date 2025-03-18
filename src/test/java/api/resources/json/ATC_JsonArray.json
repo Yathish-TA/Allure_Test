@@ -1,0 +1,20 @@
+[
+  {
+    "quantity": 1,
+    "skus": [
+      {
+        "skuId": "102478799",
+        "productId": "102478799",
+        "type": "DEFAULT"
+      }
+    ],
+    "properties": {
+      "categoryId": "undershirtswomenlongsleeve",
+      "casePackSize": 12,
+      "casePackItemQty": 1
+    },
+    "deliveryDetails": {
+      "storeLocationIdentifier": "104"
+    }
+  }
+]

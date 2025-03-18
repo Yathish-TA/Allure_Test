@@ -1,0 +1,19 @@
+framework: testng
+platforms:
+  - platformName: ios
+    browserName: chrome
+    deviceName: iPhone 16 Pro Max
+    platformVersion: 18
+browserstackLocal: true
+browserStackLocalOptions:
+  forceLocal: true
+buildName: TSC_OnePlatform_IOS
+projectName: TSC_OnePlatform_Mobile
+testContextOptions:
+  skipSessionName: true
+debug: true
+networkLogs: true
+interactiveDebugging: true
+testObservability: true
+source: cucumber-testng:appium-intellij:v1.1.6
+idleTimeout: 300

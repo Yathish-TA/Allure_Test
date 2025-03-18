@@ -1,0 +1,20 @@
+framework: testng
+app: bs://c16c4c3999e45f3e8e094390e9570b325b7a0a17
+autoGrantPermissions: true
+platforms:
+  - platformName: ios
+    deviceName: iPhone 16 Pro Max
+    platformVersion: 18
+browserstackLocal: true
+browserStackLocalOptions:
+  forceLocal: true
+buildName: TSC_OnePlatform_IOS
+projectName: TSC_OnePlatform_Mobile
+testContextOptions:
+  skipSessionName: true
+debug: true
+networkLogs: true
+interactiveDebugging: true
+testObservability: true
+source: cucumber-testng:appium-intellij:v1.1.6
+idleTimeout: 300
