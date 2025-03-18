@@ -91,7 +91,11 @@ jobs:
       - name: Set Workflow Build Name on BrowserStack
         run: echo "BROWSERSTACK_BUILD_NAME=OnePlatform_JAVA-${{ inputs.customBuildName }}-$(date '+%Y-%m-%d %H:%M:%S')" >> $GITHUB_ENV
 
-      # Update suiteXmlFile, appUnderTest, ConfigFile, Tags etc as per your requirements
+      - name: Prepare Allure history # Step to prepare Allure history directory
+        run: |
+          cd ..
+          mkdir -p target/allure-results
+
       - name: Build with Maven
         run: mvn test -DsuiteXmlFile="src/test/java/web/resources/testrunner/Single_Browser_Parallel.xml" -DappUnderTest="demo.web.url" -Dbrowserstack.config="browserstack_web_chrome.yml" -Dcucumber.filter.tags="@Demo" -q -B
 #        env:
@@ -124,7 +128,7 @@ jobs:
         if: always()
         with:
           gh_pages: gh-pages
-          allure_report: allure-report
+          allure_report: target/allure-report
           allure_history: allure-history
           allure_results: target/allure-results
 
