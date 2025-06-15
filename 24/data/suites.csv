@@ -1,2 +1,0 @@
-"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"failed","Sun Jun 01 05:11:03 GMT 2025","Sun Jun 01 05:12:08 GMT 2025","65310","","Saucedemo","","Login with valid credentials and do logout","","Login with valid credentials and do logout",""
